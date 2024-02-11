@@ -1,14 +1,16 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import React from 'react'
-import Home from './components/Home'
-import Profile from './components/Profile'
-import About from './components/About'
-import Signout from './components/Signout'
-import Signin from './components/Signin'
+import Home from './pages/Home'
+import Profile from './pages/Profile'
+import About from './pages/About'
+import Signout from './pages/Signout'
+import Signin from './pages/Signin'
+import Header from './components/Header'
 
 export default function App() {
   return (
     <BrowserRouter>
+    <Header/>
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="profile" element={<Profile />} />
