@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import { getDownloadURL, getStorage, ref, uploadBytesResumable } from 'firebase/storage'
 import { app } from '../firebase'
 import { deleteUserFailure, deleteUserSuccess, deleteUserStart, updateUserFailure, updateUserStart, updateUserSuccess, signOutUserFailure, signOutUserStart, signOutUserSuccess } from '../redux/user/userSlice'
+import { Link } from 'react-router-dom'
 
 
 export default function Profile() {
@@ -125,10 +126,28 @@ export default function Profile() {
                         ''
                     )}
                 </p>
-                <input type="text" placeholder='username' className='border p-3 rounded-lg' defaultValue={currentUser.username} id='username' onChange={handleChange} />
-                <input type="email" placeholder='email' className='border p-3 rounded-lg' defaultValue={currentUser.email} id='email' onChange={handleChange} />
-                <input type="password" placeholder='password' className='border p-3 rounded-lg' id='password' onChange={handleChange} />
-                <button disabled={loading} className='bg-slate-700 text-white rounded-lg p-3 uppercase hover:opacity-95 disabled:opacity-80'>{loading ? 'Loading...' : 'Update'}</button>
+                <input
+                    type="text"
+                    placeholder='username'
+                    className='border p-3 rounded-lg'
+                    defaultValue={currentUser.username}
+                    id='username'
+                    onChange={handleChange} />
+                <input
+                    type="email"
+                    placeholder='email'
+                    className='border p-3 rounded-lg'
+                    defaultValue={currentUser.email}
+                    id='email'
+                    onChange={handleChange} />
+                <input
+                    type="password"
+                    placeholder='password'
+                    className='border p-3 rounded-lg'
+                    id='password'
+                    onChange={handleChange} />
+                <button disabled={loading} className='bg-slate-700 text-white rounded-lg p-3 uppercase hover:opacity-70 disabled:opacity-80'>{loading ? 'Loading...' : 'Update'}</button>
+                <Link className='bg-green-700 text-white rounded-lg p-3 uppercase text-center hover:opacity-70' to={'/create-listing'}>create a listing</Link>
             </form>
             <div className='flex justify-between mt-5'>
                 <span onClick={handleDelete} className='text-red-700 cursor-pointer'>Delete Account</span>
