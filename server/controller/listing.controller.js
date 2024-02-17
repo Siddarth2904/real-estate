@@ -45,3 +45,15 @@ export const updateListing = async (req, res, next) => {
         next(error);
     }
 }
+
+export const getUserListings = async (req, res, next) => {
+    try {
+        const listings = await Listing.findById(req.params.id)
+        if (!listings) {
+            return next(errorHandler(404, 'Listing not found!'))
+        }
+        return res.status(200).json(listings);
+    } catch (error) {
+        next(error);
+    }
+}
