@@ -7,7 +7,7 @@ export default function About() {
     return (
         <div className='py-20 px-4 max-w-6xl mx-auto'>
             <h1 className='text-3xl font-bold mb-4 text-slate-800'>About Real Estate</h1>
-            <p className='mb-4 text-slate-700'>This is a Full stack project with React and Node.js with express.js as backend framework and MongoDB for database created by Siddarth Babu.</p>
+            <p className='mb-4 text-slate-700'>This is a Full stack project with React and Node.js with express.js as backend framework and MongoDB for database(MERN).</p>
             <p className='mb-4 text-slate-700'>Creator:Siddarth Babu</p>
             <p className='mb-4 text-slate-700'>Education:B.tech in Computer Science and Engineering(CSE), IIITDM, Kancheepuram.</p>
             {/* <p className='mb-4 text-slate-700'></p> */}
